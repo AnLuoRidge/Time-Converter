@@ -37,7 +37,7 @@ int main(int argc, const char * argv[]) {
     
     //Now GMT NSDate *Now = [NSDate date];
     NSDate *Now = [NSDate dateWithTimeIntervalSinceNow:8*3600];
-    NSLog(@"%@",Now);
+    NSLog(@"%@",[formatter stringFromDate:Now]);
     NSString *str_date = [formatter stringFromDate:Now];//NSString *str_date = [formatter stringFromDate:[NSDate date]];
     NSLog(@"%@",str_date);//combine above 2 into a method
 
@@ -46,12 +46,13 @@ int main(int argc, const char * argv[]) {
 
     
     // array date
-    double array_CT[10]={60*7,60*10,60*50};//specification of array naming
+    NSString *str_CT;
+    double array_CT[10]={60*5,60*10,60*50};//specification of array naming
     //NSArray *CT = [NSArray arrayWithObjects:@"120",@"240"];
     NSDate *Date2 = [NSDate dateWithTimeInterval:array_CT[0] sinceDate:Date1];
-    NSLog(@"%@",Date2);
+    NSLog(@"%@",[formatter stringFromDate:Date2]);
     NSDate *Date3 = [Date2 dateByAddingTimeInterval:array_CT[1]];
-    NSLog(@"%@",Date3);
+    NSLog(@"%@",[formatter stringFromDate:Date3]);
 
     
 //how to use array
